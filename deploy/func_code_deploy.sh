@@ -1,0 +1,1 @@
+(cd .. && func azure functionapp publish jobanzeigen-app)

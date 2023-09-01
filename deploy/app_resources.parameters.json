@@ -1,0 +1,60 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "db_skutier": {
+            "value": "Burstable" //required for free service?
+        },
+        "db_skuname": {
+            "value": "Standard_B1ms" //required for free service?
+        },
+        "storageSize": {
+            "value": 32
+        },
+        "postgresqlVersion": {
+            "value": "14"
+        },
+        "backupRetentionDays": {
+            "value": 7
+        },
+        "geoRedundantBackup": {
+            "value": "Disabled"
+        },
+        "haMode": {
+            "value": "Disabled"
+        },
+        "isActiveDirectoryAuthEnabled": {
+            "value": "Enabled"
+        },
+        "isPostgreSQLAuthEnabled": {
+            "value": "Enabled"
+        },
+        "aadAdminObjectid": {
+            "value": "GEN-AZUREAD-OBJECTID" 
+        },
+        "aadAdminName": {
+            "value": "jobanzeigen_admin"
+        },
+        "aadAdminType": {
+            "value": "ServicePrincipal"
+        },
+        "commServiceName": {
+            "value": "jobanzeigen-commservice"
+        },
+        "emailServiceName": {
+            "value": "jobanzeigen-emailservice"
+        },
+        "managedIdentityName": {
+            "value": "jobanzeigen-managedidentity"
+        },
+        "linuxFxVersion": {
+            "value": "PYTHON|3.10"
+        },
+        "functionWorkerRuntime": {
+            "value": "python"
+        },
+        "managedDomainName": {
+            "value": "AzureManagedDomain"
+        }
+    }
+}
