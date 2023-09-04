@@ -1,2 +1,2 @@
-ListingMaxLength = 40
+ListingMaxLength = 40 #TODO: this is too low
 echo = False

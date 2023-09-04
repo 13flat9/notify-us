@@ -36,6 +36,7 @@ def fetch_all_table_rows(url) -> list[Listing]:
         soup = BeautifulSoup(response.text, 'html.parser')
         rows = soup.select('tr')
 
+        # Loop through all rows and extract name and href data
         new_entries_added = False
         for row in rows[1:]:  # Skip the header row
             name_cell = row.select_one('td.name')
@@ -54,6 +55,6 @@ def fetch_all_table_rows(url) -> list[Listing]:
             raise WebcrawlerStuckInLoop(
                 f"Webcrawler made {suspiciously_large_number_of_requests * 15} GET requests and may be stuck in an infinite loop")
 
-        jobs_start += 15
+        jobs_start += 15  # Increment by 15 for the next request
 
     return [Listing(name=entry[0][:ListingMaxLength], href=entry[1]) for entry in all_rows]

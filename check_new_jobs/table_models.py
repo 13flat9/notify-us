@@ -24,6 +24,9 @@ class Listing(Base):
     def __repr__(self):
         return f'Listing "{self.name}" with href {self.href}'
 
+    def __str__(self):
+        return f"- {self.name}: {self.href}\n"
+
 class User(Base):
     __tablename__= 'user'
     email = mapped_column(String(40), primary_key=True)
